@@ -3,7 +3,7 @@ const TodoForm = () => {
     <>
       <form>
         <input type="text" name="todoField" />
-        <button type="submit">Agregar</button>
+        <button className="bi bi-plus-circle-fill add-todo" type="submit"></button>
       </form>
     </>
   );
