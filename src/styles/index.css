@@ -1,0 +1,119 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  --background-color-primary: #eae0d5;
+  --background-color-secondary: #ffffff;
+  --color-primary: #535bf2;
+  --color-secondary: #747bff;
+  --color-third: #222725;
+  --border-color-primary: #646cff;
+  --border-transparent: 1px solid transparent;
+  --border: 1px solid;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-primary);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+/* form */
+form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+input {
+  border: var(--border);
+  border-radius: 0.5rem;
+  transition: border-color 0.45s;
+}
+input:hover {
+  border-color: var(--border-color-primary);
+}
+
+/* botones */
+button {
+  background-color: var(--background-color-primary);
+  border-radius: 8px;
+  border: var(--border-transparent);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--border-color-primary);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+.check-btn {
+  color: #70e000;
+}
+.delete-btn {
+  color: #d90429;
+}
+.edit-btn {
+  color: var(--color-third);
+}
+.todo-add {
+  color: var(--color-third);
+}
+
+/* lista */
+li {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+li h4 {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: var(--background-color-secondary);
+  }
+  a:hover {
+    color: var(--color-secondary);
+  }
+}
