@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TodoItem from './TodoItem';
 
 const TodoForm = () => {
   const [todo, setTodo] = useState('');
@@ -25,7 +26,7 @@ const TodoForm = () => {
       </form>
       <ul className="todo-list">
         {todos.map((item) => (
-          <li key={item.id}>{item.text}</li> 
+          <TodoItem key={item.id} todo={item.text} />
         ))}
       </ul>
     </>
