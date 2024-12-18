@@ -1,6 +1,5 @@
-import "./styles/App.css";
 import { TodoForm, TodoList } from "./components";
-import { Header } from "./ui";
+import { Footer, Header } from "./ui";
 
 const App = () => {
   return (
@@ -8,6 +7,7 @@ const App = () => {
       <Header title="Todo list" />
       <TodoForm />
       <TodoList />
+      <Footer />
     </>
   );
 };
