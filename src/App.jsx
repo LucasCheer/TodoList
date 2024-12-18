@@ -1,4 +1,3 @@
-import "./styles/App.css";
 import { TodoForm, TodoList } from "./components";
 import { Footer, Header } from "./ui";
 
