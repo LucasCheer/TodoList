@@ -9,6 +9,7 @@
   --color-primary: #535bf2;
   --color-secondary: #747bff;
   --color-third: #222725;
+  --color-fourth: #213547;
   --border-color-primary: #646cff;
   --border-transparent: 1px solid transparent;
   --border: 1px solid;
@@ -23,6 +24,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* hipervinculos */
 a {
   font-weight: 500;
   color: #646cff;
@@ -34,16 +36,19 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex; */
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
 
+/* heading */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-align: center;
 }
+
 /* form */
 form {
   display: flex;
@@ -60,7 +65,7 @@ input:hover {
   border-color: var(--border-color-primary);
 }
 
-/* botones */
+/* buttons */
 button {
   background-color: var(--background-color-primary);
   border-radius: 8px;
@@ -92,7 +97,7 @@ button:focus-visible {
   color: var(--color-third);
 }
 
-/* lista */
+/* lists */
 li {
   align-items: center;
   display: flex;
@@ -108,9 +113,19 @@ li h4 {
   flex: 1;
 }
 
+/* footer */
+footer {
+  background-color: var(--color-fourth);
+  height: 30vh;
+}
+
+.custom-icon{
+  font-size: 1rem;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: var(--color-fourth);
     background-color: var(--background-color-secondary);
   }
   a:hover {
