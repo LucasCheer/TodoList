@@ -98,6 +98,19 @@ button:focus-visible {
 }
 
 /* lists */
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0%;
+  margin: 0%;
+}
+
 li {
   align-items: center;
   display: flex;
@@ -116,10 +129,25 @@ li h4 {
 /* footer */
 footer {
   background-color: var(--color-fourth);
-  height: 30vh;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-.custom-icon{
+.bg-primary {
+  color: var(--background-color-primary);
+}
+
+footer a {
+  margin: 0 1rem 1rem;
+}
+
+footer button{
+  color: #a6e1fa;
+  background-color: inherit;
+}
+
+.custom-icon {
   font-size: 1rem;
 }
 
