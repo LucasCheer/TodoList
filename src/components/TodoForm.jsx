@@ -6,9 +6,10 @@ const TodoForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (todo.trim() === '') return; 
-    setTodos([...todos, todo]); 
-    setTodo(''); 
+    if (todo.trim() === '') return;
+    setTodos([...todos, {id: Date.now(), text: todo, completed: false}]); 
+    console.log(todos);
+    setTodo('');
   };
 
   return (
@@ -23,8 +24,8 @@ const TodoForm = () => {
         <button type="submit">Agregar</button>
       </form>
       <ul className="todo-list">
-        {todos.map((item, index) => (
-          <li key={index}>{item}</li> 
+        {todos.map((item) => (
+          <li key={item.id}>{item.text}</li> 
         ))}
       </ul>
     </>
