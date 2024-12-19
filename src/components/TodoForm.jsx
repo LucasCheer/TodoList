@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TodoItem from "./TodoItem";
+import { TodoItem } from "./";
 
 const TodoForm = () => {
   const [todo, setTodo] = useState("");
@@ -8,6 +8,7 @@ const TodoForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (todo.trim() === "") return;
+    else if (todos.some((item) => item.text === todo.trim())) return;
     setTodos([
       ...todos,
       { id: Date.now(), text: todo, completed: false, isEditing: false },
