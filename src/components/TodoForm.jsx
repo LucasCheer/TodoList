@@ -28,7 +28,7 @@ const TodoForm = () => {
         />
         <button type="submit">Agregar</button>
       </form>
-      <ul className="todo-list">
+      <ul>
         {todos.map((item) => (
           <TodoItem key={item.id} todo={item.text} />
         ))}

@@ -25,14 +25,14 @@
 }
 
 /* hipervinculos */
-a {
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
   color: var(--color-primary);
-}
+} */
 
 body {
   margin: 0;
@@ -74,9 +74,9 @@ button {
   font-weight: 500;
   padding: 0.6em 1.2em;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: var(--border-color-primary);
+  &:hover {
+    border-color: var(--border-color-primary);
+  }
 }
 button:focus,
 button:focus-visible {
@@ -102,11 +102,11 @@ button:focus-visible {
 }
 
 ul {
-  display: flex;
+  display: grid;
   justify-content: center;
-  flex-direction: column;
   padding: 0%;
-  margin: 0%;
+  margin: auto;
+  width: 50%;
 }
 
 li {
@@ -140,7 +140,7 @@ footer a {
   margin: 0 1rem 1rem;
 }
 
-footer button{
+footer button {
   color: #a6e1fa;
   background-color: inherit;
 }
