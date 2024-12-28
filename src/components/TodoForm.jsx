@@ -2,19 +2,38 @@ import { useState } from "react";
 import { TodoItem } from "./";
 
 const TodoForm = () => {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState({
+    todoField: "",
+  });
+  const { todoField } = todo;
   const [todos, setTodos] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (todo.trim() === "") return;
-    else if (todos.some((item) => item.text === todo.trim())) return;
+    if (todoField.trim() === "") return;
+    else if (todos.some((item) => item.text === todoField.trim())) return;
     setTodos([
       ...todos,
-      { id: Date.now(), text: todo, completed: false, isEditing: false },
+      {
+        id: Date.now(),
+        text: todoField.trim(),
+        completed: false,
+        isEditing: false,
+      },
     ]);
     console.log(todos);
-    setTodo("");
+    setTodo((prevState) => ({
+      ...prevState,
+      todoField: "",
+    }));
+  };
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setTodo((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   return (
@@ -23,8 +42,9 @@ const TodoForm = () => {
         <input
           type="text"
           name="todoField"
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
+          onChange={handleChange}
+          // value={todo}
+          // onChange={(e) => setTodo(e.target.value)}
         />
         <button type="submit">Agregar</button>
       </form>
