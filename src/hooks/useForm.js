@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-export const useForm = (initialState = {}) => {
+export const useForm = (initialState = {}, onSubmit) => {
     const [formState, setFormState] = useState(initialState);
 
     const handleChange = ({ target }) => {
@@ -15,5 +15,13 @@ export const useForm = (initialState = {}) => {
         setFormState(initialState);
     };
 
-    return { formState, handleChange, resetForm };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (onSubmit) {
+            onSubmit(formState);
+            resetForm();
+        }
+    };
+
+    return { formState, handleChange, resetForm, handleSubmit };
 };

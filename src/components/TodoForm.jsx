@@ -3,26 +3,28 @@ import { TodoItem } from "./";
 import { useForm } from "../hooks";
 
 const TodoForm = () => {
-  const { formState, handleChange, resetForm } = useForm({ todoField: "" });
   const [todos, setTodos] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formState.todoField.trim() === "") return;
-    else if (todos.some((item) => item.text === formState.todoField.trim()))
-      return;
-    setTodos([
-      ...todos,
-      {
-        id: Date.now(),
-        text: formState.todoField.trim(),
-        completed: false,
-        isEditing: false,
-      },
-    ]);
-    console.log(todos);
-    resetForm();
-  };
+  const { formState, handleChange, handleSubmit } = useForm(
+    { todoField: "" },
+    (formData) => {
+      const todoText = formData.todoField.trim();
+
+      if (todoText === "") return;
+      if (todos.some((item) => item.text === todoText)) return;
+
+      // Agregar nuevo todo
+      setTodos((prevTodos) => [
+        ...prevTodos,
+        {
+          id: Date.now(),
+          text: todoText,
+          completed: false,
+          isEditing: false,
+        },
+      ]);
+    }
+  );
 
   return (
     <>
@@ -30,6 +32,7 @@ const TodoForm = () => {
         <input
           type="text"
           name="todoField"
+          value={formState.todoField} 
           onChange={handleChange}
         />
         <button type="submit">Agregar</button>
