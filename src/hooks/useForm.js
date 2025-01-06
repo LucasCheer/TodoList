@@ -11,9 +11,7 @@ export const useForm = (initialState = {}, onSubmit) => {
         }));
     };
 
-    const resetForm = () => {
-        setFormState(initialState);
-    };
+    const resetForm = () => setFormState(initialState);
 
     const handleSubmit = (event) => {
         event.preventDefault();
