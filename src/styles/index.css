@@ -2,8 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  margin: 0;
-  padding: 0;
   --background-color-primary: #eae0d5;
   --background-color-secondary: #ffffff;
   --color-primary: #535bf2;
@@ -24,18 +22,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* hipervinculos */
-/* a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: var(--color-primary);
-} */
-
 body {
   margin: 0;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -58,9 +47,9 @@ input {
   border: var(--border);
   border-radius: 0.5rem;
   transition: border-color 0.45s;
-}
-input:hover {
-  border-color: var(--border-color-primary);
+    &:hover {
+      border-color: var(--border-color-primary);
+    }
 }
 
 /* buttons */
@@ -74,14 +63,14 @@ button {
   font-weight: 500;
   padding: 0.6em 1.2em;
   transition: border-color 0.25s;
-  &:hover {
-    border-color: var(--border-color-primary);
-  }
+    &:hover {
+      border-color: var(--border-color-primary);
+    }
 }
-button:focus,
+/* button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+  outline: 20px auto -webkit-focus-ring-color;
+} */
 .check-btn {
   color: #70e000;
 }

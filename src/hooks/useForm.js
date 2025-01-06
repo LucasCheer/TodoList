@@ -20,7 +20,7 @@ export const useForm = (initialState = {}, onSubmit) => {
         if (onSubmit) {
             onSubmit(formState);
             resetForm();
-        }
+        };
     };
 
     return { formState, handleChange, resetForm, handleSubmit };

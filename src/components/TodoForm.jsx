@@ -32,7 +32,7 @@ const TodoForm = () => {
         <input
           type="text"
           name="todoField"
-          value={formState.todoField} 
+          value={formState.todoField}
           onChange={handleChange}
         />
         <button type="submit">Agregar</button>
